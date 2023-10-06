@@ -11,7 +11,7 @@ class Project extends Model
 
     protected $casts = [
         "language" => "array",
-        "date" => "date"
+        "release" => "date"
     ];
 
     protected $fillable = [
