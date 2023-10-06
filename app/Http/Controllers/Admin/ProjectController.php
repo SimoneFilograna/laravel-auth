@@ -40,6 +40,9 @@ class ProjectController extends Controller
             "release"=>"required|date",
         ]); 
 
+
+        $data["language"] = explode(",", $data["language"]);
+
         //creo l'istanza di Project, fill per assegnare i dati all'istanza
         //save per salvarli nel database
 
@@ -110,6 +113,8 @@ class ProjectController extends Controller
             "thumb"=>"required|string",
             "release"=>"required|date",
         ]); 
+
+        $data["language"] = explode(",", $data["language"]);
 
         $project->update($data);
 
