@@ -40,6 +40,19 @@ class ProjectController extends Controller
             "release"=>"required|date",
         ]); 
 
+        $counter = 0;
+
+        do {
+            $slug = Str::slug($data["title"]) . ($counter > 0 ? "-" . $counter : "");
+
+            $alreadyExists = Project::where("slug", $slug)->first();
+
+            $counter++;
+            
+        } while ($alreadyExists); 
+
+        $data["slug"] = $slug;
+
 
         $data["language"] = explode(",", $data["language"]);
 
@@ -69,12 +82,12 @@ class ProjectController extends Controller
 
     /**
      * Display the specified resource.
-     * @param string $title
+     * @param string $slug
      * @return View
      */
-    public function show(string $title):View
+    public function show(string $slug):View
     {
-        $project = Project::where("title", $title);
+        $project = Project::where("slug", $slug);
 
         return view("admin.projects.show", compact("project"));
     }

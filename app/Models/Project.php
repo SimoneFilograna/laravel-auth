@@ -21,6 +21,7 @@ class Project extends Model
         "link",
         "description",
         "thumb",
-        "release"
+        "release",
+        "slug"
     ];
 }
