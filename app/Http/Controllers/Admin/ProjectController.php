@@ -61,7 +61,7 @@ class ProjectController extends Controller
 
         $project = Project::create($data);
 
-        return redirect()->route("admin.projects.show", $project->id);
+        return redirect()->route("admin.projects.show", $project->slug);
     }
 
     //READ
@@ -110,13 +110,13 @@ class ProjectController extends Controller
 
     /**
      * Update the specified resource in storage.
-     * @param int $id
+     * @param string $slug
      * @param Request $request
      * @return RedirectResponse
      */
-    public function update(Request $request, int $id):RedirectResponse
+    public function update(Request $request, string $slug):RedirectResponse
     {
-        $project = Project::findOrFail($id);
+        $project = Project::where("slug", $slug)->first();
 
         $data = $request->validate([
             "title"=>"required|string",
@@ -131,7 +131,7 @@ class ProjectController extends Controller
 
         $project->update($data);
 
-        return redirect()->route("admin.projects.show", $project->id);
+        return redirect()->route("admin.projects.show", $project->slug);
 
     }
 
