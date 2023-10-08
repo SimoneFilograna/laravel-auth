@@ -9,8 +9,8 @@
                     Welcome to my Portfolio
                 </h1>
         
-                <p class="fs-5 text-center lh-base">Hello, I am Simone Filograna, a passionate web developer who has been immersed in the world of IT since the age of 15. Thanks to my curiosity, I have had the opportunity to delve into various programming languages, always striving to learn and preferring logic over memorization. There is no memory that can surpass a well-structured reasoning.</p>
-                <a href="{{route("admin.projects.index")}}" class="btn btn-primary btn-lg" type="button">My projects</a>
+                <p class="fs-5 text-center lh-lg">Hello, I am Simone Filograna, a passionate web developer who has been immersed in the world of IT since the age of 15. Thanks to my curiosity, I have had the opportunity to delve into various programming languages, always striving to learn and preferring logic over memorization. There is no memory that can surpass a well-structured reasoning.</p>
+                {{-- <a href="{{route("admin.projects.index")}}" class="btn btn-primary btn-lg" type="button">My projects</a> --}}
             </div>
             <div class="col-12 col-lg-6 text-center">
                 <img src="/img/right-side.svg" class="welcome-svg " alt="">             

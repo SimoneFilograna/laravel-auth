@@ -19,7 +19,7 @@
                     <div class="mb-3">
                         <label for="language" class="form-label">Languages</label>
                         <input type="text" class="form-control @error("language") is-invalid                            
-                        @enderror"" id="language" name="language" value="{{old("language")}}" >
+                        @enderror" id="language" name="language" value="{{old("language")}}" >
                         @error("language")
                             <div class="invalid-feedback">Questo campo è obbligatorio</div>
                         @enderror
@@ -31,16 +31,16 @@
                         @enderror" value="{{old("title")}}">
                         @error("link")
                             <div class="invalid-feedback">Questo campo è obbligatorio</div>
-                        @enderror">
+                        @enderror
                     </div>
 
                     <div class="mb-3">
                         <label for="description" class="form-label">Description</label>
                         <textarea  id="description" name="description" class="form-control @error("description") is-invalid                            
-                        @enderror">
+                        @enderror">{{old("description")}}</textarea>
                         @error("description")
                             <div class="invalid-feedback">Questo campo è obbligatorio</div>
-                        @enderror" >{{old("description")}}</textarea>
+                        @enderror
                     </div>
 
                     <div class="mb-3">
@@ -49,7 +49,7 @@
                         @enderror" value="{{old("thumb")}}">
                         @error("thumb")
                             <div class="invalid-feedback">Questo campo è obbligatorio</div>
-                        @enderror" >
+                        @enderror
                     </div>
 
                     <div class="mb-3">
@@ -58,7 +58,7 @@
                         @enderror" value="{{old("release")}}">
                         @error("release")
                             <div class="invalid-feedback">Questo campo è obbligatorio</div>
-                        @enderror">
+                        @enderror
                     </div>
 
                     <button type="submit" class="btn btn-primary">Submit</button>

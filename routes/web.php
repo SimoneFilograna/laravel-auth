@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ProjectController as GuestController;
 use App\Http\Controllers\Admin\ProjectController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -15,9 +16,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('guests.welcome');
-});
+Route::get('/', [GuestController::class, "index"])->name("guests.welcome");
 
 Route::get('/dashboard', function () {
     return view('admin.dashboard');
