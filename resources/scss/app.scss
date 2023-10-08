@@ -2,3 +2,10 @@
 @use "@fortawesome/fontawesome-free/css/all.min.css";
 
 
+body{
+    font-family: 'Chakra Petch', sans-serif; 
+    background-image: url(/public/img/bg-body.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
