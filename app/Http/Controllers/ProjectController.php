@@ -17,7 +17,7 @@ class ProjectController extends Controller
      */
     public  function index():View
     {
-        $projects=Project::select("*")->limit(3);
+        $projects=Project::all();
 
         return view("guests.welcome", compact("projects"));
     }
