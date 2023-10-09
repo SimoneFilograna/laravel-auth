@@ -24,7 +24,7 @@
     <div class="container-fluid text-light text-center p-5">
         <h2 class="display-5 fst-italic">My works</h2>
 
-        <div class="row row-cols-3 mt-5 g-5">
+        <div class="row row-cols-3 mt-5 g-5 p-2" >
             @foreach ( $projects as $project)
                 <div class="col mt-5">
                     <div class="card proj-card">
@@ -32,7 +32,7 @@
                         <div class="card-body d-flex flex-column">
                           <h5 class="card-title">{{$project->title}}</h5>
                           <small>{{implode(",", $project->language )}}</small>
-                          <div class="link-container text-center mt-4">
+                          <div class="link-container text-center mt-5">
                               <a href="{{route("admin.projects.show", $project->slug)}}" class="btn btn-primary w-25">Detail</a>
                           </div>
                         </div>
