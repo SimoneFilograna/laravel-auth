@@ -10,6 +10,18 @@ body{
     background-repeat: no-repeat;
     background-position: center;
 
+
+    .dropdown-menu{
+        background-color: #f536198a;
+
+        .dropdown-item {
+        
+        &:hover{
+            background-color: #1f0133;
+            }
+        }
+    }
+
     .welcome-svg{
         width: 50%;
     }
