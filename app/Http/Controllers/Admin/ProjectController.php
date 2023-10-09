@@ -40,18 +40,7 @@ class ProjectController extends Controller
             "release"=>"required|date",
         ]); 
 
-        $counter = 0;
-
-        do {
-            $slug = Str::slug($data["title"]) . ($counter > 0 ? "-" . $counter : "");
-
-            $alreadyExists = Project::where("slug", $slug)->first();
-
-            $counter++;
-            
-        } while ($alreadyExists); 
-
-        $data["slug"] = $slug;
+        $data["slug"] = $this->generateSlug($data["title"]);
 
 
         $data["language"] = explode(",", $data["language"]);
@@ -127,6 +116,10 @@ class ProjectController extends Controller
             "release"=>"required|date",
         ]); 
 
+        if($data["title"] !== $project->title){
+            $data["slug"] = $this->generateSlug($data["title"]);
+        }
+
         $data["language"] = explode(",", $data["language"]);
 
         $project->update($data);
@@ -148,5 +141,22 @@ class ProjectController extends Controller
         $project->delete();
 
         return redirect()->route("admin.projects.index");
+    }
+
+    // FUNZIONE PER OTTIMIZZARE LE GENERAZIONE DI SLUG
+
+    protected function generateSlug($title){
+        $counter = 0;
+
+        do {
+            $slug = Str::slug($title) . ($counter > 0 ? "-" . $counter : "");
+
+            $alreadyExists = Project::where("slug", $slug)->first();
+
+            $counter++;
+            
+        } while ($alreadyExists); 
+
+         return $data["slug"] = $slug;
     }
 }
