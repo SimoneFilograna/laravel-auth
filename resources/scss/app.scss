@@ -1,6 +1,7 @@
 @use "bootstrap";
 @use "@fortawesome/fontawesome-free/css/all.min.css";
 @use "./partials/variables";
+@use "./partials/mixins";
 
 
 body{
@@ -43,8 +44,25 @@ body{
                 border: 0;
 
             &:hover{
-                box-shadow: 0px 0px 50px 10px #f83b74;
+                @include mixins.box-shadow;
             }
+            }
+        }
+    }
+
+    .show-col{
+
+        .show-box{
+            a{
+                color: variables.$link-color;
+            }
+
+    };
+        .btn{
+            background-color: variables.$button-color;
+            border: 0;
+        &:hover{
+            @include mixins.box-shadow;
             }
         }
     }
