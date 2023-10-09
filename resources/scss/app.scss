@@ -66,4 +66,18 @@ body{
             }
         }
     }
+
+    .edit-container{
+        height: 100vh;
+
+        button{
+            background-color: variables.$button-color;
+            border: 0;
+        
+        &:hover{
+            @include mixins.box-shadow;
+            background-color: variables.$button-color;
+        }
+        }
+    }
 }

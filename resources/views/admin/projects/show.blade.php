@@ -14,6 +14,8 @@
 
                 </div>
 
+                {{-- BUTTON CONTAINER --}}
+
                 <div class="Btn-container d-flex gap-4 mt-3">
                     <a href="{{route("admin.projects.edit", $project->id)}}" class="btn btn-primary btn-lg mt-2" type="button"">EDIT</a>
                     <form action="{{route("admin.projects.destroy", $project->id)}}" method="POST">

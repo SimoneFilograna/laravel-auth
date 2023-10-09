@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section("content")
-    <div class="container mt-5">
+    <div class="container edit-container mt-5">
         <div class="row">
             <div class="col text-light">
                 <form action="{{route("admin.projects.update", $project->slug)}}" method="POST">
@@ -76,7 +76,7 @@
 
                     {{-- submit button --}}
 
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <button type="submit" class="btn btn-primary mt-4">Submit</button>
 
                 </form>
             </div>
