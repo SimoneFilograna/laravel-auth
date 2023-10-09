@@ -103,5 +103,16 @@ body{
             }
         }
 
+        .create-container{
+            
+            .btn{
+                background-color: variables.$button-color;
+                border: 0;
+            &:hover{
+                @include mixins.box-shadow;
+                }
+            }
+        }
+
     }
 }
