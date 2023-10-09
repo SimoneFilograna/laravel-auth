@@ -41,5 +41,9 @@
             @endforeach
         </div>
     </div>
+
+    <div class="watch-more mt-5 text-center">
+        <a href="{{route("admin.projects.index")}}" class="btn btn-primary more-button">WATCH MORE</a>
+    </div>
 </div>
 @endsection

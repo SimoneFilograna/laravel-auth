@@ -45,7 +45,15 @@ body{
 
             &:hover{
                 @include mixins.box-shadow;
+                }
             }
+        }
+        .more-button{
+            background-color: variables.$button-color;
+            border: 0;
+            width: 10%;
+        &:hover{
+            @include mixins.box-shadow;
             }
         }
     }
@@ -77,7 +85,23 @@ body{
         &:hover{
             @include mixins.box-shadow;
             background-color: variables.$button-color;
+            }
         }
+    }
+
+    .index-container{
+        height: 100vh;
+
+        table{
+            
+            a{
+                background-color: variables.$button-color;
+                border: 0;
+            &:hover{
+                background-color: variables.$link-color;
+                }
+            }
         }
+
     }
 }
