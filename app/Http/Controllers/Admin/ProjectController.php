@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\GenericProjectRequest;
 use Illuminate\Http\Request;
 use App\Models\Project;
 use Illuminate\Contracts\View\View;
@@ -29,16 +30,9 @@ class ProjectController extends Controller
      * @param Request $request
      * @return RedirectResponse
      */
-    public function store(Request $request):RedirectResponse
+    public function store(GenericProjectRequest $request):RedirectResponse
     {
-        $data = $request->validate([
-            "title"=>"required|string",
-            "language"=>"required|string",
-            "link"=>"required|string",
-            "description"=>"required|string",
-            "thumb"=>"required|string",
-            "release"=>"required|date",
-        ]); 
+        $data = $request->validated(); 
 
         $data["slug"] = $this->generateSlug($data["title"]);
 
@@ -103,18 +97,11 @@ class ProjectController extends Controller
      * @param Request $request
      * @return RedirectResponse
      */
-    public function update(Request $request, string $slug):RedirectResponse
+    public function update(GenericProjectRequest $request, string $slug):RedirectResponse
     {
         $project = Project::where("slug", $slug)->first();
 
-        $data = $request->validate([
-            "title"=>"required|string",
-            "language"=>"required|string",
-            "link"=>"required|string",
-            "description"=>"required|string",
-            "thumb"=>"required|string",
-            "release"=>"required|date",
-        ]); 
+        $data = $request->validated(); 
 
         if($data["title"] !== $project->title){
             $data["slug"] = $this->generateSlug($data["title"]);
