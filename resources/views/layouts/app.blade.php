@@ -35,9 +35,9 @@
                             </g>
                         </svg>
                     </div> --}}
-
+                    
                     {{-- config('app.name', 'Laravel') --}}
-                </a> --}}
+                {{-- </a>  --}}
 
                 <h2 class="text-white pe-3">Simone Filograna</h2>
 
