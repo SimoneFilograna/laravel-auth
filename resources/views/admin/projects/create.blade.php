@@ -14,7 +14,7 @@
                         <input type="text" id="title" name="title" class="form-control @error("title") is-invalid                            
                         @enderror" value="{{old("title")}}">
                         @error("title")
-                            <div class="invalid-feedback">Questo campo è obbligatorio</div>
+                            <div class="invalid-feedback">{{$message}}</div>
                         @enderror
                     </div>
                     
@@ -25,7 +25,7 @@
                         <input type="text" class="form-control @error("language") is-invalid                            
                         @enderror" id="language" name="language" value="{{old("language")}}" >
                         @error("language")
-                            <div class="invalid-feedback">Questo campo è obbligatorio</div>
+                            <div class="invalid-feedback">{{$message}}</div>
                         @enderror
                     </div>
 
@@ -36,7 +36,7 @@
                         <input type="text" id="link" name="link" class="form-control @error("link") is-invalid                            
                         @enderror" value="{{old("title")}}">
                         @error("link")
-                            <div class="invalid-feedback">Questo campo è obbligatorio</div>
+                            <div class="invalid-feedback">{{$message}}</div>
                         @enderror
                     </div>
 
@@ -47,7 +47,7 @@
                         <textarea  id="description" name="description" class="form-control @error("description") is-invalid                            
                         @enderror">{{old("description")}}</textarea>
                         @error("description")
-                            <div class="invalid-feedback">Questo campo è obbligatorio</div>
+                            <div class="invalid-feedback">{{$message}}</div>
                         @enderror
                     </div>
 
@@ -58,7 +58,7 @@
                         <input type="file" accept="image/*" id="thumb" name="thumb" class="form-control @error("thumb") is-invalid                            
                         @enderror">    
                         @error("thumb")
-                            <div class="invalid-feedback">Questo campo è obbligatorio</div>
+                            <div class="invalid-feedback">{{$message}}</div>
                         @enderror
                     </div>
 
@@ -69,7 +69,7 @@
                         <input type="date" id="date" name="release"  class="form-control @error("release") is-invalid                            
                         @enderror" value="{{old("release")}}">
                         @error("release")
-                            <div class="invalid-feedback">Questo campo è obbligatorio</div>
+                            <div class="invalid-feedback">{{$message}}</div>
                         @enderror
                     </div>
 

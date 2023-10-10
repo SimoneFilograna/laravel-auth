@@ -30,4 +30,16 @@ class GenericProjectRequest extends FormRequest
             "release"=>"required|date",
         ];
     }
+
+    public function messages(): array
+{
+    return [
+        "title.required" => "Il Titolo è obbligatorio",           
+        "language.required" => "I linguaggi utilizzati sono obbligatori",
+        "link.required" => "Il link di GitHub è obbligatorio",
+        "description.required" => "La descrizione è obbligatoria",
+        "thunb.max" => "Ops! L'immagine è troppo grande",
+        "release.required" => "La data è obbligatoria"
+    ];
+}
 }
