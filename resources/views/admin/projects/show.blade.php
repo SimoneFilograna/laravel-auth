@@ -6,8 +6,10 @@
             <div class="col show-col">
                 <div class="show-box d-flex flex-column gap-2">
                     <h1 class="display-4">{{$project->title}}</h1>
-                    <img src="{{$project->thumb}}" alt="" class=""> <br>
+
+                    <img src="{{asset("/storage/" . $project->thumb)}}" alt="" class="">
                     <small class="fw-bold">{{implode(",", $project->language )}}</small>
+
                     <p class="mt-2">{{$project->description}}</p>
                     <a href="{{$project->link}}" class="fs-5 text-decoration-none">GitHub</a>
                     <p>Release: {{$project->release->format("d-m-Y")}}</p>

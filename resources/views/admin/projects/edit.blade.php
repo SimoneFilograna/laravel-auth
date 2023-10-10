@@ -4,9 +4,9 @@
     <div class="container edit-container mt-5">
         <div class="row">
             <div class="col text-light">
-                <form action="{{route("admin.projects.update", $project->slug)}}" method="POST">
+                <form action="{{route('admin.projects.update', $project->slug)}}" method="POST" enctype="multipart/form-data">
                     @csrf()
-                    @method("PUT")
+                    @method("put")
                     
                     {{-- title --}}
         
@@ -56,8 +56,8 @@
 
                     <div class="mb-3">
                         <label for="thumb" class="form-label">Thumb</label>
-                        <input type="text" id="thumb" name="thumb" class="form-control @error("thumb") is-invalid                            
-                        @enderror" value="{{old("thumb", $project->thumb)}}">
+                        <input type="file" accept="image/* " id="thumb" name="thumb" class="form-control @error("thumb") is-invalid                            
+                        @enderror">
                         @error("thumb")
                             <div class="invalid-feedback">Questo campo è obbligatorio</div>
                         @enderror
