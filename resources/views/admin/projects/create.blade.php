@@ -55,7 +55,7 @@
 
                     <div class="mb-3">
                         <label for="thumb" class="form-label">Thumb</label>
-                        <input type="file"  id="thumb" name="thumb" class="form-control @error("thumb") is-invalid                            
+                        <input type="file" accept="image/*" id="thumb" name="thumb" class="form-control @error("thumb") is-invalid                            
                         @enderror">    
                         @error("thumb")
                             <div class="invalid-feedback">Questo campo è obbligatorio</div>
