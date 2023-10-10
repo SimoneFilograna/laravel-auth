@@ -136,6 +136,11 @@ class ProjectController extends Controller
     public function destroy(string $slug):RedirectResponse
     {
         $project = Project::where("slug", $slug)->firstorFail();
+
+        if ($project->thumb) {
+            Storage::delete($project->thumb);
+        }
+
         $project->delete();
 
         return redirect()->route("admin.projects.index");
